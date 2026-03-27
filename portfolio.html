@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        /* Basic styles for the portfolio */
+        body { font-family: Arial, sans-serif; }
+        .filter { margin-bottom: 15px; }
+        .project { margin: 10px; padding: 10px; border: 1px solid #ccc; }
+        .grid { display: flex; flex-wrap: wrap; }
+    </style>
+</head>
+<body>
+    <h1>My Project Showcase</h1>
+    <div class="filter">
+        <button onclick="filterProjects('all')">All</button>
+        <button onclick="filterProjects('web')">Web Development</button>
+        <button onclick="filterProjects('mobile')">Mobile Apps</button>
+        <button onclick="filterProjects('design')">Design</button>
+    </div>
+    <div class="grid" id="projectList">
+        <div class="project category-web">Project 1 - Website</div>
+        <div class="project category-mobile">Project 2 - Mobile App</div>
+        <div class="project category-design">Project 3 - Graphic Design</div>
+        <div class="project category-web">Project 4 - E-commerce Site</div>
+        <div class="project category-mobile">Project 5 - Android App</div>
+        <div class="project category-design">Project 6 - Logo Design</div>
+        <div class="project category-web">Project 7 - Portfolio Website</div>
+        <div class="project category-web">Project 8 - Blog</div>
+        <div class="project category-mobile">Project 9 - iOS App</div>
+    </div>
+    <script>
+        function filterProjects(category) {
+            const projects = document.querySelectorAll('.project');
+            projects.forEach(project => {
+                project.style.display = (category === 'all' || project.classList.contains('category-' + category)) ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
